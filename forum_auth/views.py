@@ -10,7 +10,7 @@ def register_view(request):
             return redirect('login_url')
     else:
         form = UserCreationForm()
-    return render(request, 'loginView.html', {'form': form})
+    return render(request, 'RegisterView.html', {'form': form})
 
 def login_view(requiest):
     return HttpResponse('Hello world')
