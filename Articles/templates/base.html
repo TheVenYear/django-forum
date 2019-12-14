@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Форум для мамочек</title>
+</head>
+<body>
+    <h1>Добро пожаловать на форум для мамочек</h1>
+    <ul>
+        <a href="{% url 'home_url' %}">Главная</a>
+        {% for el in rubric %}
+            <a href="{% url 'sort_url' el.url %}">{{ el.name }}</a>
+        {% endfor %}    
+    </ul>
+    
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for el in articles %}
+        <a href="{% url 'article_view_url' el.id %}"><h1>{{ el.title }}</h1></a>
+        <h2>{{ el.text }}</h2>
+        <p> {{el.date}} </p>
+        <a href="{% url 'sort_url' el.rubric.url %}">{{ el.rubric }}</a>
+    {% endfor %}
+{% endblock  %}
